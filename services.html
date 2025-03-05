@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公共服务 - 数智彩礼平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>数智彩礼</h1>
+                <p>智慧分析 · 理性决策</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="dashboard.html">数据看板</a></li>
+                    <li><a href="analysis.html">趋势分析</a></li>
+                    <li><a href="services.html" class="active">公共服务</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>公共服务与教育</h1>
+            <p>获取彩礼相关知识、建议和服务</p>
+        </div>
+    </section>
+
+    <section class="services-content">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="self-check">彩礼合规性自查</button>
+                    <button class="tab-btn" data-tab="report">匿名举报通道</button>
+                    <button class="tab-btn" data-tab="education">婚俗知识普及</button>
+                </div>
+
+                <div class="tab-content active" id="self-check">
+                    <div class="service-card">
+                        <h2>彩礼合规性自查工具</h2>
+                        <p class="service-description">根据您所在地区和经济状况，获取合理彩礼范围建议</p>
+                        
+                        <form id="self-check-form" class="service-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="region">所在地区</label>
+                                    <select id="region" required>
+                                        <option value="" disabled selected>选择省份</option>
+                                        <option value="zhejiang">浙江省</option>
+                                        <option value="fujian">福建省</option>
+                                        <option value="jiangxi">江西省</option>
+                                        <option value="anhui">安徽省</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="city">城市/县区</label>
+                                    <select id="city" disabled>
+                                        <option value="" disabled selected>选择城市/县区</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="income">年收入范围（万元）</label>
+                                    <select id="income" required>
+                                        <option value="" disabled selected>选择年收入范围</option>
+                                        <option value="under5">5万以下</option>
+                                        <option value="5to10">5-10万</option>
+                                        <option value="10to20">10-20万</option>
+                                        <option value="above20">20万以上</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="housing">是否有住房</label>
+                                    <select id="housing">
+                                        <option value="" disabled selected>选择住房情况</option>
+                                        <option value="own">有自有住房</option>
+                                        <option value="mortgage">有按揭住房</option>
+                                        <option value="rent">租房</option>
+                                        <option value="none">无住房</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                获取建议
+                                <span class="icon">→</span>
+                            </button>
+                        </form>
+
+                        <div id="result-container" class="result-container" style="display: none;">
+                            <h3>彩礼建议结果</h3>
+                            <p class="result-text">
+                                基于您提供的信息，建议的合理彩礼范围为：<span class="result-value">8-12万元</span>
+                            </p>
+                            <p class="result-note">
+                                该建议基于当地平均收入水平、房价、传统习俗等因素综合计算。仅供参考，实际情况应由双方家庭友好协商决定。
+                            </p>
+                            <div class="reference-data">
+                                <h4>背景数据参考：</h4>
+                                <ul>
+                                    <li>当地平均彩礼：10.5万元</li>
+                                    <li>当地人均年收入：7.2万元</li>
+                                    <li>当地房价：均价约12000元/平方米</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="service-resources">
+                            <div class="resource-card">
+                                <div class="resource-icon">📄</div>
+                                <h3>政策解读</h3>
+                                <p>了解最新的婚嫁政策法规和地方法规</p>
+                                <button class="btn btn-outline">查看政策文件</button>
+                            </div>
+
+                            <div class="resource-card">
+                                <div class="resource-icon">📚</div>
+                                <h3>案例学习</h3>
+                                <p>查看彩礼纠纷调解和文明婚俗的典型案例</p>
+                                <button class="btn btn-outline">查看典型案例</button>
+                            </div>
+
+                            <div class="resource-card">
+                                <div class="resource-icon">⚠️</div>
+                                <h3>风险提示</h3>
+                                <p>了解高额彩礼带来的社会风险和法律风险</p>
+                                <button class="btn btn-outline">查看风险提示</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="report">
+                    <div class="service-card">
+                        <h2>匿名举报通道</h2>
+                        <p class="service-description">针对天价彩礼索要行为提供反馈入口，助力遏制高额彩礼</p>
+                        
+                        <form id="report-form" class="service-form">
+                            <div class="form-group">
+                                <label for="incident-location">事发地点</label>
+                                <div class="form-row">
+                                    <select id="incident-province" required>
+                                        <option value="" disabled selected>选择省份</option>
+                                        <option value="zhejiang">浙江省</option>
+                                        <option value="fujian">福建省</option>
+                                        <option value="jiangxi">江西省</option>
+                                        <option value="anhui">安徽省</option>
+                                    </select>
+                                    <input type="text" id="incident-address" placeholder="详细地址（村/镇/街道）">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="incident-amount">索要彩礼金额（万元）</label>
+                                <input type="number" id="incident-amount" placeholder="例如：30" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="incident-description">详细描述</label>
+                                <textarea id="incident-description" placeholder="请描述事件详情，包括索要彩礼的方式、时间、涉及人员等信息" rows="5" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact">联系方式（选填）</label>
+                                <input type="text" id="contact" placeholder="电话或邮箱">
+                                <p class="form-note">提供联系方式有助于我们跟进处理，我们将对您的信息严格保密</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <span class="icon">📤</span>
+                                提交举报
+                            </button>
+                        </form>
+
+                        <div id="report-success" class="success-message" style="display: none;">
+                            <div class="success-icon">✓</div>
+                            <div class="success-content">
+                                <h3>举报已提交</h3>
+                                <p>感谢您的举报。我们将认真核实相关情况，并根据实际情况采取相应措施。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="education">
+                    <div class="education-grid">
+                        <div class="service-card">
+                            <h2>婚姻法规与政策解读</h2>
+                            <p class="service-description">了解婚姻相关法律法规和最新政策</p>
+                            
+                            <div class="education-items">
+                                <div class="education-item">
+                                    <h3>《民法典》关于彩礼的规定</h3>
+                                    <p>
+                                        依据《民法典》第一千零四十二条，当事人可以约定婚姻关系存续期间所得财产以及婚前财产归各自所有、共同所有或部分各自所有、部分共同所有。
+                                    </p>
+                                    <button class="btn btn-sm">查看详情</button>
+                                </div>
+
+                                <div class="education-item">
+                                    <h3>彩礼返还的法律依据</h3>
+                                    <p>
+                                        《民法典》第一千零六十三条规定，因胁迫结婚的，受胁迫的一方可以向婚姻登记机关或人民法院请求撤销婚姻。
+                                    </p>
+                                    <button class="btn btn-sm">查看详情</button>
+                                </div>
+
+                                <div class="education-item">
+                                    <h3>地方政府彩礼政策</h3>
+                                    <p>
+                                        各地方政府陆续出台规范彩礼的政策文件，倡导移风易俗，抵制天价彩礼。
+                                    </p>
+                                    <button class="btn btn-sm">查看详情</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <h2>文明婚俗宣传</h2>
+                            <p class="service-description">推广健康文明的婚俗观念</p>
+                            
+                            <div class="video-container">
+                                <div class="video-placeholder">
+                                    <span>文明婚俗宣传视频</span>
+                                </div>
+                            </div>
+
+                            <div class="promo-grid">
+                                <div class="promo-item blue">
+                                    <h3>新时代婚俗倡议</h3>
+                                    <p>推行"婚事新办"，倡导婚事简办</p>
+                                </div>
+                                <div class="promo-item green">
+                                    <h3>集体婚礼</h3>
+                                    <p>政府组织的集体婚礼活动信息</p>
+                                </div>
+                                <div class="promo-item purple">
+                                    <h3>先进典型</h3>
+                                    <p>抵制天价彩礼的模范人物和感人事迹</p>
+                                </div>
+                                <div class="promo-item orange">
+                                    <h3>村规民约</h3>
+                                    <p>优秀的乡村彩礼限额村规民约示例</p>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary full-width">查看更多婚俗宣传内容</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <h2>婚俗知识问答</h2>
+                        <p class="service-description">常见问题解答与互动交流</p>
+                        
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <h3>彩礼和嫁妆有什么区别？</h3>
+                                <p>
+                                    彩礼是男方家庭给女方家庭的财物，而嫁妆是女方家庭给女儿的财物。两者在性质和归属上有明显区别，彩礼主要是婚前给付，嫁妆则是陪嫁物品。
+                                </p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3>法律上如何认定彩礼归属？</h3>
+                                <p>
+                                    根据最高人民法院的司法解释，彩礼的归属应当根据当地风俗习惯、给付目的、数额大小以及双方经济状况等因素综合考虑。符合特定条件的情况下，彩礼可以要求返还。
+                                </p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3>什么情况下可以要求返还彩礼？</h3>
+                                <p>
+                                    根据司法实践，以下情况一般可以要求返还彩礼：双方未办理结婚登记手续；办理结婚登记手续但确未共同生活；婚前给付并导致给付人生活困难。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ask-question">
+                            <input type="text" placeholder="输入您的婚俗相关问题..." class="question-input">
+                            <button class="btn btn-primary">提问</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>数智彩礼</h2>
+                    <p>智慧分析 · 理性决策</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>平台导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="dashboard.html">数据看板</a></li>
+                            <li><a href="analysis.html">趋势分析</a></li>
+                            <li><a href="services.html">公共服务</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>资源中心</h3>
+                        <ul>
+                            <li><a href="#">政策法规</a></li>
+                            <li><a href="#">研究报告</a></li>
+                            <li><a href="#">典型案例</a></li>
+                            <li><a href="#">常见问题</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>联系我们</h3>
+                        <ul>
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">联系方式</a></li>
+                            <li><a href="#">加入我们</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 数智彩礼平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="services.js"></script>
+</body>
+</html>
+
